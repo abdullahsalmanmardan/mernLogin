@@ -1,0 +1,10 @@
+.backtoHome {
+  border: 2px solid aqua;
+  border-radius: 10px;
+  border-color: aqua;
+  color: aqua;
+  background-color: white;
+}
+.container {
+  height: 100%;
+}
