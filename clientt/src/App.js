@@ -15,7 +15,7 @@ const Routing = () => {
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/signup" element={<Registration />} />

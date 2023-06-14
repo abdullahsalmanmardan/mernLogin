@@ -27,7 +27,16 @@ router.post("/register", async (req, res) => {
     if (userExist) {
       return res.status(200).json({ error: "Email already exists" });
     }
-    const user1 = new user({ name, email, phone, work, password, cpassword });
+    const type = "admin";
+    const user1 = new user({
+      name,
+      email,
+      phone,
+      work,
+      password,
+      cpassword,
+      type,
+    });
     //todo is jaga pe hum data to hash karin gay
 
     const data = await user1.save();
@@ -58,7 +67,9 @@ router.post("/signin", async (req, res) => {
         expires: new Date(Date.now() + 30000000),
         httpOnly: true,
       });
-      return res.status(200).json({ message: "Successfully login " });
+      return res
+        .status(200)
+        .json([{ type: userExist.type }, { name: userExist.type }]);
     } else {
       return res.status(422).json({ error: "invalid credentials" });
     }
@@ -69,7 +80,9 @@ router.post("/signin", async (req, res) => {
 //* is ma middleware jo ha wo autheticate ha
 router.get("/aboutus", authenticate, async (req, res) => {
   console.log("this is about us page");
-  res.status(200).send(req.rootuser);
+  const type = req.type;
+  const user = req.rootuser;
+  res.status(200).send({ user, type });
 });
 
 router.get("/logout", async (req, res) => {

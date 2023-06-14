@@ -26,6 +26,7 @@ const authenticate = async (req, res, next) => {
     req.token = token;
     req.rootuser = rootuser;
     req.userId = rootuser._id;
+    req.type = rootuser.type;
     next();
   } catch (err) {
     res.status(400).json({ message: "no token found " });

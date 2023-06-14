@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+  },
   //todo this is the array of the token
   tokens: [
     {

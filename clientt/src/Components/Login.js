@@ -38,12 +38,13 @@ const Login = () => {
       }),
     });
     const data = await res.json();
-    console.log("the data is" + res);
+    console.log("the data is", data[0].type);
     if (res.status === 422 || !data) {
       window.alert("Registration failed");
     } else {
+      let user = data[0].type;
       //todo when user is found
-      dispatch({ type: "user", payload: true });
+      dispatch({ type: user, payload: "admin" });
 
       window.alert("Registration succesfull");
       navigate("/home");

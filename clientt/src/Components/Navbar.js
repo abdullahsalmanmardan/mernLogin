@@ -34,6 +34,17 @@ const Navbar = () => {
         </>
       );
     }
+    if ((state === "admin")) {
+      return (
+        <>
+          <li className="nav-item">
+            <NavLink to="/Logout" className="nav-link">
+              adnan bro
+            </NavLink>
+          </li>
+        </>
+      );
+    }
   };
   return (
     <>
