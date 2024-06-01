@@ -15,6 +15,10 @@ const Logout = () => {
       },
       credentials: "include",
     });
+    // dispatch se reducer function call ho jay ga.
+    // jo type ha wo wala if execute ho jay ga
+    // action is konsi type wala if execute karna ha.
+    // payload is the value
     dispatch({ type: "user", payload: false });
     //todo api called and we called the login page to frontend
     console.log("logout button pressed");

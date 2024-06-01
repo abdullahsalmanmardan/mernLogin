@@ -30,9 +30,11 @@ const Routing = () => {
 };
 
 function App() {
-  //* initail state is the value we will pass
+  //* initail state is null by default.
   //* reducer is the function that we will define
   //* dispatch ma hum type bataa de gay jaha se reducer function ma if else lagaaa sakin gay
+  // dispatch will always trigger the action mehtod in reducer
+  // dispatch corresponds to the reducer function
   const [state, dispatch] = useReducer(reducer, initialState);
   //todo agr hum ne koi value sab routes pe send karni ha //* here we have
   //todo sent state and dispatch to the every route
